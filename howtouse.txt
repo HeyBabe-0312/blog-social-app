@@ -1,12 +1,12 @@
 pip install virtualenv
 py -m venv venv
-virtualenv -p "C:\Users\Xuan vinh\AppData\Local\Programs\Python\Python36\python.exe" venv 
+virtualenv -p "C:\Users\Admin\AppData\Local\Programs\Python\Python36\python.exe" venv 
 
 set FLASK_APP=flasky.py
 set FLASK_DEBUG=1
-set MAIL_USERNAME=tanjirou11111@gmail.com
-set MAIL_PASSWORD=minhhieu0312
-set FLASKY_ADMIN=tanjirou11111@gmail.com
+set MAIL_USERNAME=phapskute@gmail.com
+set MAIL_PASSWORD=114477889966332255
+set FLASKY_ADMIN=phapskute@gmail.com
 flask db upgrade
 flask db migrate
 flask shell
