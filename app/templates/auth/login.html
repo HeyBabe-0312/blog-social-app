@@ -1,16 +1,17 @@
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
+<div style="background-color: antiquewhite;" ;>
+    {% extends "base.html" %} {% import "bootstrap/wtf.html" as wtf %} {% block title %}Flasky - Login{% endblock %}{% block page_content %}
 
-{% block title %}Flasky - Login{% endblock %}
-
-{% block page_content %}
-<div class="page-header">
-    <h1>Login</h1>
+    <div class="page-header" style="border-radius: 25px; padding: 3px;background-color: #c45b57;margin-right: 390px;margin-left: 390px;font-family: cursive;">
+        <h1 style="color: rgb(32, 30, 30);margin-left: 120px;margin-bottom: 20px; ">Sign In </h1>
+    </div>
+    <div class="col-md-4 col-lg-offset-4">
+        <form action="" method="post">
+            {{ wtf.quick_form(form) }}
+        </form>
+        <br>
+        <p style="margin-left: 80px; ">You forgot password? <a href="{{ url_for('auth.password_reset_request') }}">Reset here</a>.</p>
+        <p style="margin-left: 160px;margin-top: 1pt;">Or</p>
+        <p style="margin-left: 80px;margin-top: 0px;">Don't have an account? <a href="{{ url_for('auth.register') }}">Sign up</a>.</p>
+    </div>
+    {% endblock %}
 </div>
-<div class="col-md-4">
-    {{ wtf.quick_form(form) }}
-    <br>
-    <p>Forgot your password? <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>.</p>
-    <p>New user? <a href="{{ url_for('auth.register') }}">Click here to register</a>.</p>
-</div>
-{% endblock %}
