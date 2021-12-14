@@ -13,7 +13,7 @@
     {% endif %}
 </div>
 <div class="tabs">
-    <ul class="nav nav-tabs topnav">
+    <ul class=" nav2 nav-tabs topnav">
         <li{% if not show_followed %} class="active" {% endif %}><a href="{{ url_for('.show_all') }}" style="font-family: cursive; overflow: hidden;">All</a></li>
         {% if current_user.is_authenticated %}
         <li{% if show_followed %} class="active" {% endif %}><a  href="{{ url_for('.show_followed') }}" style="font-family: cursive; overflow: hidden;">Followed</a></li>
