@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   {% extends "base.html" %} {% import "bootstrap/wtf.html" as wtf %} {% block title %}Hunter X Hunter - Register{% endblock %} {% block page_content %}
   <div class="page-header" style="margin-top: 200px; border-radius: 25px; padding: 3px;background-color: #d63530;margin-right: 390px;margin-left: 390px;font-family: cursive;border: 1px solid #000;">
@@ -9,3 +10,17 @@
       </form>
   </div>
   {% endblock %}
+=======
+<div style="background-color: antiquewhite;">
+    {% extends "base.html" %} {% import "bootstrap/wtf.html" as wtf %} {% block title %}Flasky - Register{% endblock %} {% block page_content %}
+    <div class="page-header" style="border-radius: 25px; padding: 3px;background-color: #c45b57;margin-right: 390px;margin-left: 390px;font-family: cursive;">
+        <h1 style="color: rgb(32, 30, 30);margin-left: 110px;margin-bottom: 20px; ">Sign Up</h1>
+    </div>
+    <div class="col-md-4 col-lg-offset-4">
+        <form action="" method="post">
+            {{ wtf.quick_form(form) }}
+        </form>
+    </div>
+    {% endblock %}
+</div>
+>>>>>>> ecf47f7c51d93f1b897a050918d28dc1943394f1

@@ -9,7 +9,11 @@ class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Length(1, 64),
                                              Email()])
     password = PasswordField('Password', validators=[DataRequired()])
+<<<<<<< HEAD
     remember_me = BooleanField('Keep me logged in')
+=======
+    remember_me = BooleanField('Remember Me')
+>>>>>>> ecf47f7c51d93f1b897a050918d28dc1943394f1
     submit = SubmitField('Sign In')
 
 
@@ -61,7 +65,7 @@ class ChangeEmailForm(FlaskForm):
     email = StringField('New Email', validators=[DataRequired(), Length(1, 64),
                                                  Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Update Email Address')
+    submit = SubmitField('Update Email')
 
     def validate_email(self, field):
         if User.query.filter_by(email=field.data.lower()).first():
