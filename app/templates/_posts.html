@@ -23,7 +23,7 @@
         {% if current_user == post.author %}
         <a href="{{ url_for('.edit', id=post.id) }}">
           <button class="button-edit">
-            <i class="far fa-thumbs-up"></i>
+            <i class="far fa-edit"></i>
             Edit</button>
         </a>
         {% elif current_user.is_administrator() %}
