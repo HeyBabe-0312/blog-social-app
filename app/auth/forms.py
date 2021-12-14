@@ -9,8 +9,8 @@ class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Length(1, 64),
                                              Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    remember_me = BooleanField('Keep me logged in')
-    submit = SubmitField('Log In')
+    remember_me = BooleanField('Remember Me')
+    submit = SubmitField('Sign In')
 
 
 class RegistrationForm(FlaskForm):
@@ -24,7 +24,7 @@ class RegistrationForm(FlaskForm):
     password = PasswordField('Password', validators=[
         DataRequired(), EqualTo('password2', message='Passwords must match.')])
     password2 = PasswordField('Confirm password', validators=[DataRequired()])
-    submit = SubmitField('Register')
+    submit = SubmitField('Sign Up')
 
     def validate_email(self, field):
         if User.query.filter_by(email=field.data.lower()).first():
@@ -61,7 +61,7 @@ class ChangeEmailForm(FlaskForm):
     email = StringField('New Email', validators=[DataRequired(), Length(1, 64),
                                                  Email()])
     password = PasswordField('Password', validators=[DataRequired()])
-    submit = SubmitField('Update Email Address')
+    submit = SubmitField('Update Email')
 
     def validate_email(self, field):
         if User.query.filter_by(email=field.data.lower()).first():
