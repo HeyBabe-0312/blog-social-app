@@ -4,22 +4,19 @@
 {% import "bootstrap/wtf.html" as wtf %}
 {% import "_macros.html" as macros %}
 
-{% block title %}Flasky{% endblock %}
+{% block title %}Hunter X Hunter{% endblock %}
 
 {% block page_content %}
-<div class="page-header">
-    <h1>Hello, {% if current_user.is_authenticated %}{{ current_user.username }}{% else %}Stranger{% endif %}!</h1>
-</div>
-<div>
+<div style="margin-top: 100px; border-radius: 15px;border: 1px solid #000; padding: 30px; background-color: #3b6fb8; margin-bottom: 20px; font-family: cursive; box-shadow: #5E5DF0 0 10px 20px -10px;color: #fff;">
     {% if current_user.can(Permission.WRITE) %}
     {{ wtf.quick_form(form) }}
     {% endif %}
 </div>
-<div class="post-tabs">
-    <ul class="nav nav-tabs">
-        <li{% if not show_followed %} class="active"{% endif %}><a href="{{ url_for('.show_all') }}">All</a></li>
+<div class="tabs">
+    <ul class="nav nav-tabs topnav">
+        <li{% if not show_followed %} class="active" {% endif %}><a href="{{ url_for('.show_all') }}" style="font-family: cursive; overflow: hidden;">All</a></li>
         {% if current_user.is_authenticated %}
-        <li{% if show_followed %} class="active"{% endif %}><a href="{{ url_for('.show_followed') }}">Followed</a></li>
+        <li{% if show_followed %} class="active" {% endif %}><a  href="{{ url_for('.show_followed') }}" style="font-family: cursive; overflow: hidden;">Followed</a></li>
         {% endif %}
     </ul>
     {% include '_posts.html' %}
@@ -35,3 +32,4 @@
 {{ super() }}
 {{ pagedown.include_pagedown() }}
 {% endblock %}
+

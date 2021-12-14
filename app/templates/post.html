@@ -2,13 +2,13 @@
 {% import "bootstrap/wtf.html" as wtf %}
 {% import "_macros.html" as macros %}
 
-{% block title %}Flasky - Post{% endblock %}
+{% block title %}Hunter X Hunter - Post{% endblock %}
 
 {% block page_content %}
 {% include '_posts.html' %}
-<h4 id="comments">Comments</h4>
+<h4 id="comments" style="margin: 10px">Comments</h4>
 {% if current_user.can(Permission.COMMENT) %}
-<div class="comment-form">
+<div class="comment-form "style="margin: 10px">
     {{ wtf.quick_form(form) }}
 </div>
 {% endif %}

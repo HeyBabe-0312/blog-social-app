@@ -1,10 +1,18 @@
-{% extends "bootstrap/base.html" %} {% block title %}Flasky{% endblock %} {% block head %} {{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
-<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+
+{% extends "bootstrap/base.html" %} {% block title %}Hunter X Hunter{% endblock %} {% block head %} {{ super() }}
+<link rel="shortcut icon" href="{{ url_for('static', filename='hunterxhunter.ico') }}" type="image/x-icon" />
+<link rel="icon" href="{{ url_for('static', filename='hunterxhunter.ico') }}" type="image/x-icon" />
+<link rel="stylesheet" href="{{ url_for('static', filename='mystyles.css') }}" />
+{{ fontawesome_html() }}
 {% endblock %} {% block navbar %}
-<div class="navbar navbar-inverse" role="navigation">
-  <div class="container">
+{% block styles %}{{super()}}
+<link rel="stylesheet" href="{{ url_for('static',filename='post.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='mystyles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='cmt.css') }}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+{% endblock %}
+<div class="navbar navbar-inverse" role="navigation" style="background-color: #d63530; position: fixed; width: 100%;">
+  <div class="container" style="padding: 10px;">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -12,45 +20,46 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ url_for('main.index') }}">Flasky</a>
+      <a class="navbar-brand font-size-logo" href="{{ url_for('main.index') }}" style="font-family: cursive; color: #fff; ">Hunter X Hunter</a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url_for('main.index') }}">Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('main.index') }}" style="font-family: cursive; color: #fff;"><i class="fas fa-vihara" style="margin-right: 5px;"></i>Home</a></li>
         {% if current_user.is_authenticated %}
-        <li><a href="{{ url_for('main.user', username=current_user.username) }}">Profile</a></li>
+        <li class="nav-item"><a href="{{ url_for('main.user', username=current_user.username) }}" style="font-family: cursive; color: #fff;"><i class="fas fa-user-alt" style="margin-right: 5px;"></i>Profile</a></li>
         {% endif %}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {% if current_user.can(Permission.MODERATE) %}
-        <li><a href="{{ url_for('main.moderate') }}">Moderate Comments</a></li>
+        <li class="nav-item"><a href="{{ url_for('main.moderate') }}" style="font-family: cursive; color: #fff;"><i class="fas fa-comment-dots" style="margin-right: 5px;"></i>Comments</a></li>
         {% endif %}
         {% if current_user.is_authenticated %}
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="{{ current_user.gravatar(size=18) }}" />
-            Account <b class="caret"></b>
+          <a class="dropdown-menu-text nav-item font-size-nav" href="#" class="dropdown-toggle nav-item font-size-nav" data-toggle="dropdown" style="font-family: cursive; color: #fff;">
+            <img src="https://ih1.redbubble.net/image.2143420954.5736/st,small,507x507-pad,600x600,f8f8f8.jpg" style="border: 1px solid; border-radius: 50%; width: 23px;height: 23px;margin-left: 5px;"/>
+            {{current_user.username}} <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="{{ url_for('auth.change_password') }}">Change Password</a></li>
-            <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
-            <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+            <li class="dropdown-menu-item"><a href="{{ url_for('auth.change_password') }}" >Change Password</a></li>
+            <li class="dropdown-menu-item"><a  href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
+            <li class="dropdown-menu-item" ><a href="{{ url_for('auth.logout') }}" >Log Out</a></li>
           </ul>
         </li>
         {% else %}
-        <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+        <li class="nav-item"><a href="{{ url_for('auth.login') }}" style="font-family: cursive; color: #fff;">Sign In</a></li>
         {% endif %}
       </ul>
     </div>
   </div>
 </div>
 {% endblock %} {% block content %}
-<div class="container">
+<div class="container" >
   {% for message in get_flashed_messages() %}
-  <div class="alert alert-warning">
+  <div class="alert alert-warning" style="margin-top: 100px;">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
     {{ message }}
   </div>
   {% endfor %} {% block page_content %}{% endblock %}
 </div>
 {% endblock %} {% block scripts %} {{ super() }} {{ moment.include_moment() }} {% endblock %}
+

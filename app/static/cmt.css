@@ -1,0 +1,29 @@
+.list-cmt{
+    list-style-type:None;
+    padding: 10px;
+    font-family: cursive;
+   
+}
+.cmt-border{
+    background-color: rgb(141, 209, 186);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.date-cmt{
+    font-weight:lighter;
+    color:#4e4e4e
+}
+.body-cmt{
+    padding: 10px;
+    font-size: 15px;
+}
+.name-cmt{
+    font-weight: 600;
+    color: rgb(72, 5, 197);
+    font-size: 15px;
+}
+.cmt-cnt{
+    margin-left: 15px;
+    margin-bottom: 5px;
+}

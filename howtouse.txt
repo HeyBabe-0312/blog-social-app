@@ -12,6 +12,8 @@ flask db migrate
 flask shell
 Role.insert_roles()
 Role.query.all()
+
+
 from app import fake
 fake.users(50)
 fake.posts(50)

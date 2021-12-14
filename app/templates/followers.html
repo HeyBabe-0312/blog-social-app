@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
 
-{% block title %}Flasky - {{ title }} {{ user.username }}{% endblock %}
+{% block title %}Hunter X Hunter - {{ title }} {{ user.username }}{% endblock %}
 
 {% block page_content %}
 <div class="page-header">
@@ -14,7 +14,7 @@
     <tr>
         <td>
             <a href="{{ url_for('.user', username = follow.user.username) }}">
-                <img class="img-rounded" src="{{ follow.user.gravatar(size=32) }}">
+                <img class="img-rounded" src="https://ih1.redbubble.net/image.2143420954.5736/st,small,507x507-pad,600x600,f8f8f8.jpg" style="width: 32px; height: 32px;">
                 {{ follow.user.username }}
             </a>
         </td>
