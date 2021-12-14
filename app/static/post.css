@@ -7,10 +7,13 @@
     height: 60px;
 }
 .bg-post{
-    margin-top: 10px;
+    margin-top: 90px;
     list-style-type:None;
     padding: 10px;
     box-shadow: #5E5DF0 0 10px 20px -10px;
+    border-radius: 10px;
+    background-color: rgb(221, 221, 221);
+
 }
 .postss{
     font-family: cursive;
@@ -65,17 +68,17 @@
       width: fit-content;
       word-break: break-word;
       border: 0;
-    
+      font-family: cursive;
 }
 
 .button-cmt {
+    font-family: cursive;
     background: #0f7fc9;
     border-radius: 999px;
     box-shadow: #5E5DF0 0 10px 20px -10px;
     box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
-    font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
@@ -96,14 +99,13 @@
 }
 
 .button-like {
+  font-family: cursive;
   background: #5E5DF0;
   border-radius: 999px;
   box-shadow: #5E5DF0 0 10px 20px -10px;
   box-sizing: border-box;
   color: #FFFFFF;
   cursor: pointer;
-  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
-  font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   opacity: 1;
@@ -115,6 +117,8 @@
   width: fit-content;
   word-break: break-word;
   border: 0;
+
+  transition-duration: .2s;
 }
 .button-nav{
     color: rgb(136, 4, 15);
@@ -171,22 +175,27 @@
     width: auto;
   }
   
-  .button-40:hover {
-    background-color: #374151;
+  .btn-default:hover {
+    background-color: #7aa5eb;
   }
   
-  .button-40:focus {
+  .btn-default:focus {
     box-shadow: none;
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
   
   @media (min-width: 768px) {
-    .button-40 {
+    .btn-default {
       padding: .75rem 1.5rem;
     }
   }
   .nav2{
     list-style-type:None;
     padding: 0px;
+  }
+  button:hover,img:hover {
+    transform: scale(1.1);
+    transition-duration: 500ms;
+
   }

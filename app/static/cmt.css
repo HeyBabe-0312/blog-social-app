@@ -2,7 +2,24 @@
     list-style-type:None;
     padding: 10px;
     font-family: cursive;
+    background-color: rgb(221, 221, 221);
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    border-radius: 10px;
+    padding-bottom: 20px;
    
+}
+.bg-content{
+    padding: 10px;
+    /* background-color: rgb(156, 156, 91); */
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+  }
+.bg-o-cmt{
+    padding: 10px;
+    background-color: darkblue;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+  
 }
 .cmt-border{
     background-color: rgb(141, 209, 186);

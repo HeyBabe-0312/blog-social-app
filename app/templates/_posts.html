@@ -1,5 +1,5 @@
 
-<ul class=" bg-post">
+<ul class=" bg-post" >
   {% for post in posts %}
   <li class="post postss bg-o-post">
     
@@ -17,7 +17,7 @@
         {% if post.body_html %} {{ post.body_html | safe }} {% else %} {{ post.body }} {% endif %}
       </div>
       <div class="post-footer">
-        <button class="button-like">
+        <button class="button-like" id="like">
           <i class="far fa-thumbs-up"></i>
            Like</button>
         {% if current_user == post.author %}
