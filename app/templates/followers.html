@@ -4,17 +4,17 @@
 {% block title %}Hunter X Hunter - {{ title }} {{ user.username }}{% endblock %}
 
 {% block page_content %}
-<div class="page-header">
+<div class="page-header" style="margin-top: 100px;">
     <h1>{{ title }} {{ user.username }}</h1>
 </div>
-<table class="table table-hover followers">
-    <thead><tr><th>User</th><th>Since</th></tr></thead>
+<table class="table table-hover followers bg-content1">
+    <thead><tr style="background-color: rgb(191, 191, 191);"><th>User</th><th>Since</th></tr></thead>
     {% for follow in follows %}
     {% if follow.user != user %}
     <tr>
         <td>
             <a href="{{ url_for('.user', username = follow.user.username) }}">
-                <img class="img-rounded" src="https://ih1.redbubble.net/image.2143420954.5736/st,small,507x507-pad,600x600,f8f8f8.jpg" style="width: 32px; height: 32px;">
+                <img class="img-rounded" src="https://ih1.redbubble.net/image.2143420954.5736/st,small,507x507-pad,600x600,f8f8f8.jpg" style="width: 32px; height: 32px; border-radius: 50%;margin-right: 5px;border: 1px solid #000;">
                 {{ follow.user.username }}
             </a>
         </td>
@@ -23,7 +23,7 @@
     {% endif %}
     {% endfor %}
 </table>
-<div class="pagination">
+<div class="pagination" style="float: right;">
     {{ macros.pagination_widget(pagination, endpoint, username = user.username) }}
 </div>
 {% endblock %}

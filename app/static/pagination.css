@@ -1,0 +1,51 @@
+.pan {
+    margin-left: 980px;
+    display: block;
+    float: left;
+    text-align: center;
+    width: 21%;
+    border-radius: 50%;
+  }
+  .pan a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-left: 4px;
+  }
+  
+  .pan a.active {
+    background-color: lightblue;
+    color: rgb(116, 116, 116);
+    border-radius: 5px;
+    border: black solid 1px;
+  }
+  .pan a:not(.active){
+    position: relative;
+    margin-left: -1;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.43;
+    text-decoration: none;
+    font-family: cursive;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .pan a:hover:not(.active) {
+    background-color: rgb(92, 194, 238);
+    border-radius: 5px;
+    
+  }
+  #myShow {
+    padding: 12px ;
+    display: initial;
+    width: 8%;
+    font-size: 16px; 
+    background-color: lightblue;
+    border: 1px solid #ddd;  
+    margin-right: 1.4%;
+  }
+  #myShow:hover{
+    background-color: #71dae4;
+    border: 1px solid black;
+  }

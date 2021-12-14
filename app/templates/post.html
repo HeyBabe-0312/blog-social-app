@@ -6,15 +6,17 @@
 
 {% block page_content %}
 {% include '_posts.html' %}
-<h4 id="comments" style="margin: 10px">Comments</h4>
+<div class="bg-content">
+    <h4 id="comments" style="margin: 10px ;font-family: cursive; margin-top: 20px; font-weight: 600;">Comments</h4>
 {% if current_user.can(Permission.COMMENT) %}
-<div class="comment-form "style="margin: 10px">
+<div class="comment-form "style="margin: 10px; font-family: cursive;">
     {{ wtf.quick_form(form) }}
+</div>
 </div>
 {% endif %}
 {% include '_comments.html' %}
 {% if pagination %}
-<div class="pagination">
+<div class="pagination" style="float: right;">
     {{ macros.pagination_widget(pagination, '.post', fragment='#comments', id=posts[0].id) }}
 </div>
 {% endif %}

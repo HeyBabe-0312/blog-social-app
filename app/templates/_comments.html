@@ -1,14 +1,14 @@
 
 <ul class="comments list-cmt">
     {% for comment in comments %}
-    <li class="comment cmt-border">
+    <li class="comment cmt-border bg-o-post postss">
         <div class="comment-thumbnail header">
             <a href="{{ url_for('.user', username=comment.author.username) }}">
                 <img class="img-avt" style="width: 50px; height: 50px;" src="https://ih1.redbubble.net/image.2143420954.5736/st,small,507x507-pad,600x600,f8f8f8.jpg">
             </a>
             <div style="padding-top: 15px;">
                 <div class="name-cmt"><a href="{{ url_for('.user', username=comment.author.username) }}">{{ comment.author.username }}</a></div>
-                <div class="date-cmt">{{ moment(comment.timestamp).fromNow() }}</div>
+                <div class="date-cmt">{{ moment(comment.timestamp).fromNow() }}・<i class="fas fa-globe-asia"></i></div>
               </div>
         </div>
         <div class="comment-content cmt-cnt">

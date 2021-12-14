@@ -9,7 +9,7 @@
       </a>
       <div style="padding-top: 15px;">
         <a class="name" href="{{ url_for('.user', username=post.author.username) }}">{{ post.author.username }}</a>
-        <div class="post-date date" >{{ moment(post.timestamp).fromNow() }}・<i class="fas fa-globe-americas"></i></div>
+        <div class="post-date date" >{{ moment(post.timestamp).fromNow() }}・<i class="fas fa-globe-asia"></i></div>
       </div>
     </div>
     <div class="post-content">     
@@ -17,25 +17,25 @@
         {% if post.body_html %} {{ post.body_html | safe }} {% else %} {{ post.body }} {% endif %}
       </div>
       <div class="post-footer">
-        <button class="button-like">
+        <button class="button-like" id="like" style="margin-right: 10px;">
           <i class="far fa-thumbs-up"></i>
            Like</button>
+           <a href="{{ url_for('.post', id=post.id) }}#comments">
+            <button class="button-cmt" style="margin-right: 10px;"><i class="far fa-comments"></i> {{ post.comments.count() }} Comments</button>
+          </a>
         {% if current_user == post.author %}
         <a href="{{ url_for('.edit', id=post.id) }}">
-          <button class="button-edit">
+          <button class="button-edit" style="margin-right: 10px;">
             <i class="far fa-edit"></i>
             Edit</button>
         </a>
         {% elif current_user.is_administrator() %}
         <a href="{{ url_for('.edit', id=post.id) }}">
-          <button class="button-edit">
+          <button class="button-edit" style="margin-right: 10px;">
             <i class="fas fa-edit"></i> Edit [Admin]</button>
         </a>
         {% endif %}
         
-        <a href="{{ url_for('.post', id=post.id) }}#comments">
-          <button class="button-cmt"><i class="far fa-comments"></i> {{ post.comments.count() }} Comments</button>
-        </a>
       </div>
     </div>
   </li>
